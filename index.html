@@ -3,74 +3,166 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Search Page</title>
+<title>College Portal</title>
 
 <style>
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
+    margin: 0;
     background: #f2f2f2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
-/* container */
-.search-box {
+/* LOGIN */
+#login {
     text-align: center;
+    margin-top: 60px;
 }
 
-/* input style */
-input[type="text"] {
-    width: 320px;
-    padding: 12px;
-    border-radius: 25px;
+.box {
+    width: 90%;
+    max-width: 360px;
+    margin: auto;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.2);
+}
+
+.box img {
+    width: 110px;
+}
+
+/* INPUT */
+input {
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
     border: 1px solid #ccc;
-    outline: none;
-    font-size: 16px;
+    border-radius: 6px;
 }
 
-/* button */
+/* BUTTON */
 button {
-    margin-top: 15px;
-    padding: 10px 25px;
-    border: none;
-    border-radius: 20px;
-    background: #4285f4;
+    width: 100%;
+    padding: 10px;
+    background: #c00000;
     color: white;
-    font-size: 15px;
+    border: none;
+    border-radius: 6px;
     cursor: pointer;
 }
 
 button:hover {
-    background: #2a64c5;
+    background: darkred;
+}
+
+/* HOME */
+#home {
+    display: none;
+    text-align: center;
+}
+
+header {
+    background: #c00000;
+    color: white;
+    padding: 20px;
+}
+
+.card {
+    width: 85%;
+    max-width: 600px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* SEARCH BOX */
+.search-box {
+    margin-top: 20px;
+}
+
+.search-box input {
+    width: 60%;
+    padding: 12px;
+    border-radius: 25px;
+}
+
+.search-box button {
+    width: auto;
+    padding: 12px 20px;
+    border-radius: 25px;
+    background: #4285f4;
 }
 </style>
 </head>
 
 <body>
 
-<div class="search-box">
+<!-- LOGIN PAGE -->
+<div id="login">
+    <div class="box">
+        <img src="logo.png" alt="College Logo">
 
-    <h2>Search Box</h2>
+        <h2>Adhiparasakthi Engineering College</h2>
+        <p>Melmaruvathur</p>
 
-    <!-- FORMSPREE FORM -->
-    <form action="https://formspree.io/f/maqglkkk" method="POST">
+        <input type="text" id="user" placeholder="Username">
+        <input type="password" id="pass" placeholder="Password">
 
-        <!-- User search input -->
-        <input type="text" name="message" placeholder="Type your search..." required>
+        <button onclick="login()">Login</button>
 
-        <!-- Optional subject -->
-        <input type="hidden" name="_subject" value="New Search Query Received">
+        <p id="msg" style="color:red;"></p>
+    </div>
+</div>
 
-        <br>
+<!-- HOME PAGE -->
+<div id="home">
+
+<header>
+    <h1>Welcome to College Portal</h1>
+    <p>Adhiparasakthi Engineering College</p>
+</header>
+
+<img src="logo.png" width="120">
+
+<div class="card">
+    <h2>Student Dashboard</h2>
+    <p>✔ Attendance</p>
+    <p>✔ Results</p>
+    <p>✔ Department Info</p>
+</div>
+
+<!-- SEARCH FORM (FORMSPREE) -->
+<div class="card search-box">
+
+    <h2>Search Anything</h2>
+
+    <form action="https://formspree.io/f/mdarpvqz" method="POST">
+
+        <input type="text" name="search_query" placeholder="Type here..." required>
 
         <button type="submit">Search</button>
 
     </form>
 
 </div>
+
+</div>
+
+<script>
+function login() {
+    let u = document.getElementById("user").value;
+    let p = document.getElementById("pass").value;
+
+    if(u === "admin" && p === "1234") {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("home").style.display = "block";
+    } else {
+        document.getElementById("msg").innerText = "Invalid username or password!";
+    }
+}
+</script>
 
 </body>
 </html>
