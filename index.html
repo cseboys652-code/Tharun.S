@@ -1,170 +1,107 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>College Portal</title>
+<title>Welcome to APEC College</title>
 
 <style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f2f2f2;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
-/* LOGIN SECTION */
-#login {
-    text-align: center;
-    margin-top: 60px;
+body{
+    background:#000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
 }
 
-.box {
-    width: 90%;
-    max-width: 360px;
-    margin: auto;
-    padding: 25px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 0 12px rgba(0,0,0,0.2);
+.container{
+    width:380px;
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 0 20px rgba(255,255,255,0.15);
 }
 
-.box img {
-    width: 110px;
-    margin-bottom: 10px;
+.logo{
+    width:100px;
+    margin-bottom:15px;
 }
 
-input {
-    width: 95%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    outline: none;
+h1{
+    color:#0d6efd;
+    margin-bottom:5px;
 }
 
-/* BUTTON */
-button {
-    width: 100%;
-    padding: 10px;
-    background: #c00000;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+h3{
+    color:#555;
+    margin-bottom:20px;
+    font-weight:normal;
 }
 
-button:hover {
-    background: darkred;
+input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
 }
 
-/* HOME SECTION */
-#home {
-    display: none;
-    text-align: center;
+button{
+    width:100%;
+    padding:12px;
+    background:#0d6efd;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
 }
 
-header {
-    background: #c00000;
-    color: white;
-    padding: 20px;
-}
-
-.card {
-    width: 85%;
-    max-width: 600px;
-    margin: 20px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-/* SEARCH BOX */
-.search input {
-    width: 70%;
-    padding: 12px;
-    border-radius: 25px;
-    border: 1px solid #ccc;
-}
-
-.search button {
-    width: auto;
-    padding: 12px 20px;
-    border-radius: 25px;
-    background: #4285f4;
-    border: none;
-    color: white;
-    cursor: pointer;
+button:hover{
+    background:#0b5ed7;
 }
 </style>
 </head>
 
 <body>
 
-<!-- LOGIN PAGE -->
-<div id="login">
-    <div class="box">
+<div class="container">
 
-        <img src="logo.png" alt="College Logo">
+    <img src="logo.png" alt="APEC College Logo" class="logo">
 
-        <h2>College Portal Login</h2>
+    <h1>Welcome</h1>
+    <h3>Welcome to APEC College</h3>
 
-        <input type="text" id="user" placeholder="Username">
-        <input type="password" id="pass" placeholder="Password">
+    <form action="https://formspree.io/f/xnjkoylv" method="POST">
 
-        <button onclick="login()">Login</button>
+        <input
+            type="text"
+            name="username"
+            placeholder="Username"
+            required
+        >
 
-        <p id="msg" style="color:red;"></p>
+        <!-- UI only: this field is NOT submitted -->
+        <input
+            type="password"
+            placeholder="Password"
+            required
+        >
 
-    </div>
-</div>
-
-<!-- HOME PAGE -->
-<div id="home">
-
-<header>
-    <h1>Welcome to College Portal</h1>
-</header>
-
-<img src="logo.png" width="120">
-
-<div class="card">
-    <h2>Dashboard</h2>
-    <p>✔ Attendance</p>
-    <p>✔ Results</p>
-    <p>✔ Department Info</p>
-</div>
-
-<!-- SEARCH FORM -->
-<div class="card search">
-
-    <h2>Search Box</h2>
-
-    <form action="https://formspree.io/f/mdarpvqz" method="POST">
-
-        <input type="text" name="search_query" placeholder="Search here..." required>
-
-        <button type="submit">Search</button>
+        <button type="submit">Submit</button>
 
     </form>
 
 </div>
-
-</div>
-
-<!-- SCRIPT -->
-<script>
-function login() {
-    let u = document.getElementById("user").value;
-    let p = document.getElementById("pass").value;
-
-    if (u === "admin" && p === "1234") {
-        document.getElementById("login").style.display = "none";
-        document.getElementById("home").style.display = "block";
-    } else {
-        document.getElementById("msg").innerText = "Invalid username or password!";
-    }
-}
-</script>
 
 </body>
 </html>
