@@ -16,12 +16,12 @@ body {
     height: 100vh;
 }
 
-/* Search Box Container */
+/* container */
 .search-box {
     text-align: center;
 }
 
-/* Google style input */
+/* input style */
 input[type="text"] {
     width: 320px;
     padding: 12px;
@@ -31,6 +31,7 @@ input[type="text"] {
     font-size: 16px;
 }
 
+/* button */
 button {
     margin-top: 15px;
     padding: 10px 25px;
@@ -51,18 +52,24 @@ button:hover {
 <body>
 
 <div class="search-box">
-    <h2>Google Style Search</h2>
+
+    <h2>Search Box</h2>
 
     <!-- FORMSPREE FORM -->
     <form action="https://formspree.io/f/maqglkkk" method="POST">
 
-        <input type="text" name="search_query" placeholder="Search here..." required>
+        <!-- User search input -->
+        <input type="text" name="message" placeholder="Type your search..." required>
+
+        <!-- Optional subject -->
+        <input type="hidden" name="_subject" value="New Search Query Received">
 
         <br>
 
         <button type="submit">Search</button>
 
     </form>
+
 </div>
 
 </body>
