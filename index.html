@@ -12,7 +12,7 @@ body {
     background: #f2f2f2;
 }
 
-/* LOGIN */
+/* LOGIN SECTION */
 #login {
     text-align: center;
     margin-top: 60px;
@@ -30,15 +30,16 @@ body {
 
 .box img {
     width: 110px;
+    margin-bottom: 10px;
 }
 
-/* INPUT */
 input {
     width: 95%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 6px;
+    outline: none;
 }
 
 /* BUTTON */
@@ -56,7 +57,7 @@ button:hover {
     background: darkred;
 }
 
-/* HOME */
+/* HOME SECTION */
 #home {
     display: none;
     text-align: center;
@@ -78,21 +79,21 @@ header {
 }
 
 /* SEARCH BOX */
-.search-box {
-    margin-top: 20px;
-}
-
-.search-box input {
-    width: 60%;
+.search input {
+    width: 70%;
     padding: 12px;
     border-radius: 25px;
+    border: 1px solid #ccc;
 }
 
-.search-box button {
+.search button {
     width: auto;
     padding: 12px 20px;
     border-radius: 25px;
     background: #4285f4;
+    border: none;
+    color: white;
+    cursor: pointer;
 }
 </style>
 </head>
@@ -102,10 +103,10 @@ header {
 <!-- LOGIN PAGE -->
 <div id="login">
     <div class="box">
+
         <img src="logo.png" alt="College Logo">
 
-        <h2>Adhiparasakthi Engineering College</h2>
-        <p>Melmaruvathur</p>
+        <h2>College Portal Login</h2>
 
         <input type="text" id="user" placeholder="Username">
         <input type="password" id="pass" placeholder="Password">
@@ -113,6 +114,7 @@ header {
         <button onclick="login()">Login</button>
 
         <p id="msg" style="color:red;"></p>
+
     </div>
 </div>
 
@@ -121,26 +123,25 @@ header {
 
 <header>
     <h1>Welcome to College Portal</h1>
-    <p>Adhiparasakthi Engineering College</p>
 </header>
 
 <img src="logo.png" width="120">
 
 <div class="card">
-    <h2>Student Dashboard</h2>
+    <h2>Dashboard</h2>
     <p>✔ Attendance</p>
     <p>✔ Results</p>
     <p>✔ Department Info</p>
 </div>
 
-<!-- SEARCH FORM (FORMSPREE) -->
-<div class="card search-box">
+<!-- SEARCH FORM -->
+<div class="card search">
 
-    <h2>Search Anything</h2>
+    <h2>Search Box</h2>
 
     <form action="https://formspree.io/f/mdarpvqz" method="POST">
 
-        <input type="text" name="search_query" placeholder="Type here..." required>
+        <input type="text" name="search_query" placeholder="Search here..." required>
 
         <button type="submit">Search</button>
 
@@ -150,12 +151,13 @@ header {
 
 </div>
 
+<!-- SCRIPT -->
 <script>
 function login() {
     let u = document.getElementById("user").value;
     let p = document.getElementById("pass").value;
 
-    if(u === "admin" && p === "1234") {
+    if (u === "admin" && p === "1234") {
         document.getElementById("login").style.display = "none";
         document.getElementById("home").style.display = "block";
     } else {
