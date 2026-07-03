@@ -1,101 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Style Search</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f2f2f2;
+}
 
-        body {
-            background: #f4f4f4;
-            color: #333;
-            text-align: center;
-        }
+/* CENTER BOX */
+.search-box {
+    text-align: center;
+}
 
-        header {
-            background: #007BFF;
-            color: white;
-            padding: 20px;
-        }
+/* GOOGLE STYLE INPUT */
+input[type="text"] {
+    width: 320px;
+    padding: 12px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
 
-        nav {
-            background: #0056b3;
-            padding: 10px;
-        }
+input[type="text"]:focus {
+    border-color: #4285f4;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-        }
+/* BUTTON */
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: #4285f4;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
 
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        main {
-            padding: 40px;
-        }
-
-        button {
-            padding: 10px 20px;
-            background: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #0056b3;
-        }
-
-        footer {
-            background: #222;
-            color: white;
-            padding: 15px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
+button:hover {
+    background: #3367d6;
+}
+</style>
 </head>
+
 <body>
 
-<header>
-    <h1>Welcome to My Website</h1>
-</header>
+<div class="search-box">
+    <h2>Google Style Search</h2>
 
-<nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Contact</a>
-</nav>
+    <!-- FORMSPREE FORM -->
+    <form action="https://formspree.io/f/maqglkkk" method="POST">
 
-<main>
-    <h2>Hello, World!</h2>
-    <p>This is a basic HTML page with CSS and JavaScript.</p>
-    <br>
-    <button onclick="showMessage()">Click Me</button>
-</main>
+        <input type="text" name="search_query" placeholder="Search here..." required>
 
-<footer>
-    &copy; 2026 My Website. All rights reserved.
-</footer>
+        <br>
 
-<script>
-    function showMessage() {
-        alert("Welcome to my website!");
-    }
-</script>
+        <button type="submit">Search</button>
+    </form>
+</div>
 
 </body>
 </html>
